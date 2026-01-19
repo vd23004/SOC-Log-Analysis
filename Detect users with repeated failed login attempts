@@ -1,0 +1,4 @@
+index=auth_logs action=failure
+| stats count AS failures by user
+| where failures > 5
+| sort - failures
